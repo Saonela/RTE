@@ -1,0 +1,19 @@
+html{
+    overflow-y: scroll;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 40px;
+}
+
+footer {
+    position: absolute;
+    bottom: 25px;
+    width: 60%;
+    height: 40px;
+    line-height: 20px;
+
+    overflow: hidden;
+}
