@@ -74,4 +74,8 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: RTE\UserBundle\Entity\User
+    user_class: RTER\UserBundle\Entity\User
+    registration:
+        form:
+            type: RTER\UserBundle\Form\Type\RegistrationType
+            validation_groups: [AppRegistration]

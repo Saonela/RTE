@@ -1,6 +1,6 @@
 <?php
 
-namespace RTE\UserBundle\Entity;
+namespace RTER\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -19,11 +19,7 @@ class User extends BaseUser
     protected $id;
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     */
-    protected $name;
+
 
     public function __construct()
     {

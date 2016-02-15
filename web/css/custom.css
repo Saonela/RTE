@@ -17,3 +17,17 @@ footer {
 
     overflow: hidden;
 }
+
+.registration-form {
+    margin: auto;
+    width: 45%;
+}
+
+.registration-form-title
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: auto;
+    width: 62%;
+    text-align: center;
+}

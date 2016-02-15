@@ -1,0 +1,31 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<div class="registration-form-title">
+<h2>Registration form</h2>
+</div>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+<div class="row registration-form">
+    <fieldset class="form-group">
+        <label for="email">Email address</label>
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':"Enter email"} }) }}
+        <small class="text-muted">Won't be visible to anyone without your permission</small>
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="username">Name</label>
+        {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+        <small class="text-muted">This is how other people will see you</small>
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="password1">Password</label>
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="password2">Confirm password</label>
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+    </fieldset>
+    <div>
+        <button type="submit" class="btn btn-success">Register</button>
+    </div>
+</div>
+{{ form_end(form) }}
