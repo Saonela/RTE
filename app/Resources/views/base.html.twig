@@ -25,10 +25,12 @@
     <div class="header clearfix">
         <nav>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {#<li><p></p></li>#}
-                {#<li{% if app.request.pathinfo == '/event/new' %} class="active"{% endif %}><a href="/event/new">{% trans %}Naujas renginys{% endtrans %}</a></li>#}
-                {#<li{% if app.request.pathinfo == '/profile/' or app.request.pathinfo == '/profile/edit' or app.request.pathinfo == '/profile/change-password' %} class="active"{% endif %}><a href="{{ path('fos_user_profile_show') }}"><strong>{{ app.user.name }} {{ app.user.surname }}</strong> {% trans %}paskyra{% endtrans %}</a></li>#}
-                <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+
+                <ul class="nav nav-pills pull-right">
+
+                    <li class="text-center vertical-center">{{ app.user.username }}</li>
+                    <li role="presentation"><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul>
             {% else %}
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation" {% if app.request.pathinfo == '/login' %} class="active"{% endif %}><a href="{{ path('fos_user_security_login') }}">Login</a></li>
