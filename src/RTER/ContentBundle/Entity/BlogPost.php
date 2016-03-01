@@ -55,7 +55,6 @@ class BlogPost
 //     * @ORM\Column(name="user", type="string", length=255)
 //     */
     /**
-     * @var string
      *
      * @ORM\ManyToOne(targetEntity="RTER\UserBundle\Entity\User", inversedBy="blogPosts")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
@@ -180,7 +179,7 @@ class BlogPost
     /**
      * Set user
      *
-     * @param string $user
+     * @param RTER\UserBundle\Entity\User
      *
      * @return BlogPost
      */
@@ -194,7 +193,7 @@ class BlogPost
     /**
      * Get user
      *
-     * @return string
+     * @return RTER\UserBundle\Entity\User
      */
     public function getUser()
     {

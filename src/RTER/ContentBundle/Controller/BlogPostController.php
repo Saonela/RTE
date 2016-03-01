@@ -39,31 +39,37 @@ class BlogPostController extends Controller
      * @Route("/new", name="blogpost_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request) //galbut verta formos atvaizda iskelt nuo jos apdorojimo
     {
-        $blogPost = new BlogPost();
-        $form = $this->createForm('RTER\ContentBundle\Form\BlogPostType', $blogPost);
-        $form->handleRequest($request);
+        $securityAuthorizationChecker = $this->container->get('security.authorization_checker');
+        if ($securityAuthorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            $blogPost = new BlogPost();
+            $form = $this->createForm('RTER\ContentBundle\Form\BlogPostType', $blogPost);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $user = $this->container->get('security.token_storage')->getToken()->getUser();
-            $blogPost->setUser($user);
+                $user = $this->container->get('security.token_storage')->getToken()->getUser();
+                $blogPost->setUser($user);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($blogPost);
-            $em->flush();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($blogPost);
+                $em->flush();
 
-            return $this->redirectToRoute('blog_show', array('continent' => $blogPost->getCountry()->getContinent(),
-            'country' => $blogPost->getCountry()->getName(),
-            'id' => $blogPost->getId()
+
+                return $this->redirectToRoute('blog_show', array(
+                    'continent' => $blogPost->getCountry()->getContinent()->getName(),
+                    'country' => $blogPost->getCountry()->getName(),
+                    'id' => $blogPost->getId()
+                ));
+            }
+
+            return $this->render('blogpost/new.html.twig', array(
+                'blogPost' => $blogPost,
+                'form' => $form->createView(),
             ));
         }
-
-        return $this->render('blogpost/new.html.twig', array(
-            'blogPost' => $blogPost,
-            'form' => $form->createView(),
-        ));
+        return $this->redirectToRoute('fos_user_security_login');
     }
 
     /**

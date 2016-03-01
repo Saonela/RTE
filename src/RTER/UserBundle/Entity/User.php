@@ -24,7 +24,7 @@ class User extends BaseUser
     protected $blogPosts;
 
     /**
-     * @return mixed
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getBlogPosts()
     {
