@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>BlogPost</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ blogPost.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ blogPost.name }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ blogPost.location }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if blogPost.date %}{{ blogPost.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ blogPost.content }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('blogpost_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('blogpost_edit', { 'id': blogPost.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

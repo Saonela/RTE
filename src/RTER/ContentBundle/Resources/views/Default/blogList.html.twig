@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if blogList  %}
+        {% for blogPost in blogList %}
+            <div class="col-lg-6">
+                <div class="info-content text-center blogPost">
+                    <input type="hidden" class="info" value="{{ blogPost.id }}">
+                    <h3>{{ blogPost.name }}</h3>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

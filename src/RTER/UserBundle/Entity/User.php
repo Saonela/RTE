@@ -18,7 +18,26 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+    * @ORM\OneToMany(targetEntity="RTER\ContentBundle\Entity\BlogPost", mappedBy="user")
+    */
+    protected $blogPosts;
 
+    /**
+     * @return mixed
+     */
+    public function getBlogPosts()
+    {
+        return $this->blogPosts;
+    }
+
+    /**
+     * @param mixed $blogPosts
+     */
+    public function setBlogPosts($blogPosts)
+    {
+        $this->blogPosts = $blogPosts;
+    }
 
 
     public function __construct()

@@ -1,7 +1,12 @@
-rter_user:
-    resource: "@RTERUserBundle/Controller/"
+rter_content:
+    resource: "@RTERContentBundle/Controller/"
     type:     annotation
     prefix:   /
+
+#rter_user:
+#    resource: "@RTERUserBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

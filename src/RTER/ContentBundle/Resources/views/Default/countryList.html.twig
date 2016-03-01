@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% if countries  %}
+    {% for country in countries %}
+        <div class="col-lg-6">
+            <div class="info-content text-center country" id="{{ country.name }}"><h3>{{ country.name }}</h3></div>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}
