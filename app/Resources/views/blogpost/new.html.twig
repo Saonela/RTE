@@ -1,16 +1,118 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>BlogPost creation</h1>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {#<link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">#}
+    <div id="datetimepicker" class="input-append date">
+        <input type="text"></input>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+    </div>
+    <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+    <script type="text/javascript">
+        $('#datetimepicker').datetimepicker({
+            format: 'dd/MM/yyyy hh:mm:ss',
+            language: 'pt-BR'
+        });
+    </script>
+    {#<link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">#}
+    {#<h1>BlogPost creation</h1>#}
 
-    <ul>
-        <li>
-            <a href="{{ path('blogpost_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    {#&#123;&#35;{{ form_start(form) }}&#35;&#125;#}
+        {#&#123;&#35;{{ form_widget(form) }}&#35;&#125;#}
+        {#&#123;&#35;<input type="submit" value="Create" />&#35;&#125;#}
+    {#&#123;&#35;{{ form_end(form) }}&#35;&#125;#}
+
+    {#{{ form_start(form, {'method': 'post', 'action': path('blogpost_new')}) }}#}
+    {#<div class="row">#}
+        {#<fieldset class="form-group">#}
+            {#<label for="title">Title</label>#}
+            {#{{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder':"Enter name of article"} }) }}#}
+        {#</fieldset>#}
+        {#<fieldset class="form-group">#}
+            {#<label for="location">Location</label>#}
+            {#{{ form_widget(form.location, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}#}
+            {#<small class="text-muted">Enter more specific location/region/city</small>#}
+        {#</fieldset>#}
+        {#<fieldset class="form-group">#}
+            {#<label for="date">Date</label>#}
+            {#{{ form_widget(form.date, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}#}
+        {#</fieldset>#}
+
+
+
+        {#<fieldset class="form-group">#}
+            {#<div class="container">#}
+                {#<div class="hero-unit">#}
+                    {#<input  type="text" placeholder="click to show datepicker"  id="example1">#}
+                {#</div>#}
+                {#&#123;&#35;<script src="js/bootstrap-datepicker.js"></script>&#35;&#125;#}
+            {#</div>#}
+        {#</fieldset>#}
+        {#&#123;&#35;<div class="well">&#35;&#125;#}
+            {#&#123;&#35;<div id="datetimepicker" class="input-append">&#35;&#125;#}
+                {#&#123;&#35;<input data-format="yyyy-MM-dd" type="text"></input>&#35;&#125;#}
+    {#&#123;&#35;<span class="add-on">&#35;&#125;#}
+      {#&#123;&#35;<i data-time-icon="icon-time" data-date-icon="icon-calendar">&#35;&#125;#}
+      {#&#123;&#35;</i>&#35;&#125;#}
+    {#&#123;&#35;</span>&#35;&#125;#}
+            {#&#123;&#35;</div>&#35;&#125;#}
+        {#&#123;&#35;</div>&#35;&#125;#}
+
+        {#<fieldset class="form-group">#}
+            {#<label for="content">Content</label>#}
+            {#{{ form_widget(form.content, { 'attr': {'class': 'form-control', 'placeholder':"Enter Content"} }) }}#}
+        {#</fieldset>#}
+        {#<fieldset class="form-group">#}
+            {#<label for="country">Select country</label>#}
+            {#{{ form_widget(form.country, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}#}
+        {#</fieldset>#}
+        {#<div>#}
+            {#<button type="submit" class="btn btn-success">Post</button>#}
+            {#<a type="button" class="btn btn-danger pull-right" href="/">Cancel</a>#}
+        {#</div>#}
+    {#</div>#}
+    {#{{ form_end(form) }}#}
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('blogpost_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+
+
+
+    {#<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>#}
+    {#<script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>#}
+    {#<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>#}
+    {#&#123;&#35;<script type="text/javascript">&#35;&#125;#}
+        {#&#123;&#35;$('#datetimepicker').datetimepicker(&#123;&#35;}#}
+            {#&#123;&#35;format: 'dd/MM/yyyy',&#35;&#125;#}
+            {#&#123;&#35;pickTime: false&#35;&#125;#}
+           {#&#123;&#35;// language: 'pt-BR'&#35;&#125;#}
+        {#&#123;&#35;});&#35;&#125;#}
+    {#&#123;&#35;</script>&#35;&#125;#}
+    {#<script type="text/javascript">#}
+        {#$(document).ready(function () {#}
+
+            {#$('#example1').datepicker({#}
+                {#format: "dd/mm/yyyy"#}
+            {#});#}
+
+        {#});#}
+    {#</script>#}
 {% endblock %}
