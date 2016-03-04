@@ -36,20 +36,26 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="location">Location</label>
-            {{ form_widget(form.location, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}
+            {{ form_widget(form.location, { 'attr': {'class': 'form-control', 'placeholder':"Location"} }) }}
             <small class="text-muted">Enter more specific location/region/city</small>
         </fieldset>
-        <fieldset class="form-group">
-            <label for="date">Date</label>
-            {{ form_widget(form.date, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}
+        {#<fieldset class="form-group">#}
+            {#<label for="date">Date</label>#}
+            {#{{ form_widget(form.date, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}#}
+        {#</fieldset>#}
+        <fieldset>
+            <div class="form-group">
+                <label for="datepicker">Date</label>
+                    <input class="form-control" type="text" placeholder="YYYY-MM-DD" id="datepicker">
+            </div>
         </fieldset>
         <fieldset class="form-group">
             <label for="content">Content</label>
-            {{ form_widget(form.content, { 'attr': {'class': 'form-control', 'placeholder':"Enter Content"} }) }}
+            {{ form_widget(form.content, { 'attr': {'class': 'form-control', 'placeholder':"Content"} }) }}
         </fieldset>
         <fieldset class="form-group">
             <label for="country">Select country</label>
-            {{ form_widget(form.country, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}
+            {{ form_widget(form.country, { 'attr': {'class': 'form-control', 'placeholder':"Country"} }) }}
         </fieldset>
         <div>
             <button type="submit" class="btn btn-success">Post</button>

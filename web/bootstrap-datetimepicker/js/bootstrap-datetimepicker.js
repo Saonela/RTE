@@ -1413,6 +1413,24 @@
   };
 
   $.fn.datetimepicker.defaults = {
+    autoclose: true,
+    beforeShowDay: $.noop,
+    calendarWeeks: false,
+    clearBtn: false,
+    daysOfWeekDisabled: [],
+    endDate: Infinity,
+    forceParse: true,
+    format: 'mm/dd/yyyy',
+    keyboardNavigation: true,
+    language: 'en',
+    minViewMode: 0,
+    orientation: "auto",
+    rtl: false,
+    startDate: -Infinity,
+    startView: 2,
+    todayBtn: false,
+    todayHighlight: false,
+    weekStart: 0
   };
   $.fn.datetimepicker.Constructor = Datetimepicker;
   var dates = $.fn.datetimepicker.dates = {
