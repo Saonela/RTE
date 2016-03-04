@@ -19,10 +19,10 @@ class BlogPostType extends AbstractType
         $builder
             ->add('name')
             ->add('location')
-            ->add('date',  DateType::class, array(
-                'widget' => 'single_text',
-                'html5' => false,
-            ))
+            ->add('date',  DateType::class)//, array(
+//                'widget' => 'single_text',
+//                'html5' => false,
+//            ))
             ->add('content')
            // ->add('user')
             ->add('country', EntityType::class, array(
