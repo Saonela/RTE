@@ -1,32 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        <form action="" class="form-horizontal"  role="form">
-            <fieldset>
-                <div class="form-group">
-                    <label for="dtp_input2" class="col-md-2 control-label">Date Picking</label>
-                    <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                        <input class="form-control" size="16" type="text" value="" readonly>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                    <input type="hidden" id="dtp_input2" value="" /><br/>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-
 
 {#==============================================================================
 
 #}
     <h1>BlogPost creation</h1>
 
-    {#{{ form_start(form) }}#}
-        {#{{ form_widget(form) }}#}
-        {#<input type="submit" value="Create" />#}
-    {#{{ form_end(form) }}#}
+    {% if form_errors(form.date) %}
+        <div class="alert alert-danger" role="alert">
+            Please choose correct date.
+        </div>
+    {% endif %}
 
     {{ form_start(form, {'method': 'post', 'action': path('blogpost_new')}) }}
     <div class="row">
@@ -35,27 +20,21 @@
             {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder':"Enter name of article"} }) }}
         </fieldset>
         <fieldset class="form-group">
+            <label for="country">Country</label>
+            {{ form_widget(form.country, { 'attr': {'class': 'form-control', 'placeholder':"Country"} }) }}
+        </fieldset>
+        <fieldset class="form-group">
             <label for="location">Location</label>
             {{ form_widget(form.location, { 'attr': {'class': 'form-control', 'placeholder':"Location"} }) }}
             <small class="text-muted">Enter more specific location/region/city</small>
         </fieldset>
-        {#<fieldset class="form-group">#}
-            {#<label for="date">Date</label>#}
-            {#{{ form_widget(form.date, { 'attr': {'class': 'form-control', 'placeholder':""} }) }}#}
-        {#</fieldset>#}
-        <fieldset>
-            <div class="form-group">
-                <label for="datepicker">Date</label>
-                    <input class="form-control" type="text" placeholder="YYYY-MM-DD" id="datepicker">
-            </div>
+        <fieldset class="form-group">
+            <label for="date">Date</label>
+            {{ form_widget(form.date) }}
         </fieldset>
         <fieldset class="form-group">
             <label for="content">Content</label>
             {{ form_widget(form.content, { 'attr': {'class': 'form-control', 'placeholder':"Content"} }) }}
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="country">Select country</label>
-            {{ form_widget(form.country, { 'attr': {'class': 'form-control', 'placeholder':"Country"} }) }}
         </fieldset>
         <div>
             <button type="submit" class="btn btn-success">Post</button>

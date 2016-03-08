@@ -28,6 +28,7 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
                 <ul class="nav nav-pills pull-right">
+                    <li><p><a class="btn btn-lg btn-success" href="{{ path('blogpost_index') }}" role="button">Your Articles</a></p></li>
                     <li><p><a class="btn btn-lg btn-success" href="{{ path('blogpost_new') }}" role="button">Upload</a></p></li>
                     <li class="text-center vertical-center">{{ app.user.username }}</li>
                     <li role="presentation"><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>

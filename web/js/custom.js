@@ -4,8 +4,7 @@ $(document).ready(function() {
 
 function init(){
 
-    $('#datepicker').datepicker({
-        //format: 'mm-dd-yyyy'
+    $('.datepicker').datepicker({
         language:  'en',
         weekStart: 1,
         todayBtn:  1,
@@ -14,7 +13,7 @@ function init(){
         minView: 2,
         forceParse: 0,
         format: "yyyy-mm-dd",
-        pickerPosition: "bottom-left"
+        orientation: "left"
     });
 
     $(".country").click(function(){

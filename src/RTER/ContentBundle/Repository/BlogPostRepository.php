@@ -10,4 +10,14 @@ namespace RTER\ContentBundle\Repository;
  */
 class BlogPostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findDistinctCountries()
+    {
+        $query = $this->createQueryBuilder('e')
+//            ->select('id')
+//            ->where('e.orderDeadlineDate > :date')
+//            ->setParameter('date', date("Y-m-d H:i:s"))
+            ->groupBy('e.country')
+            ->getQuery();
+        return $query->getResult();
+    }
 }

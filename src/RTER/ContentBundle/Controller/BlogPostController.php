@@ -24,13 +24,21 @@ class BlogPostController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $securityAuthorizationChecker = $this->container->get('security.authorization_checker');
+        if ($securityAuthorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            $em = $this->getDoctrine()->getManager();
 
-        $blogPosts = $em->getRepository('RTERContentBundle:BlogPost')->findAll();
+            $user = $this->container->get('security.token_storage')->getToken()->getUser();
+            $blogPosts = $em->getRepository('RTERContentBundle:BlogPost')->findByUser($user);
+            $countries = $em->getRepository('RTERContentBundle:BlogPost')->findDistinctCountries($user);
 
-        return $this->render('blogpost/index.html.twig', array(
-            'blogPosts' => $blogPosts,
-        ));
+
+            return $this->render('blogpost/index.html.twig', array(
+                'blogPosts' => $blogPosts,
+                'blogs' => $countries
+            ));
+        }
+        return $this->redirectToRoute('fos_user_security_login');
     }
 
     /**
@@ -110,7 +118,7 @@ class BlogPostController extends Controller
 
         return $this->render('blogpost/edit.html.twig', array(
             'blogPost' => $blogPost,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

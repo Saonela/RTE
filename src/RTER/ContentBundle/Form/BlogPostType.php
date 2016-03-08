@@ -19,12 +19,14 @@ class BlogPostType extends AbstractType
         $builder
             ->add('name')
             ->add('location')
-            ->add('date',  DateType::class)//, array(
-//                'widget' => 'single_text',
-//                'html5' => false,
-//            ))
+            ->add('date', null, [
+                'widget' => 'single_text',
+                'attr' => [
+                    'class' => 'form-control datepicker',
+                    'placeholder' => "YYYY-MM-DD"
+                ]
+            ])
             ->add('content')
-           // ->add('user')
             ->add('country', EntityType::class, array(
                     'class' => 'RTER\ContentBundle\Entity\Country',
                     'choice_label' => 'name',
