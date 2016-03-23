@@ -29,7 +29,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "twbs/bootstrap": "^3.3",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "symfony/dependency-injection": "^3.0"
+        "symfony/dependency-injection": "^3.0",
+        "ongr/elasticsearch-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -158,4 +158,44 @@ class BlogPostController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Displays a form to edit an existing BlogPost entity.
+     *
+     * @Route("/search/", name="blogpost_search")
+     * @Method("GET")
+     */
+    public function searchAction(Request $request)
+    {
+        $q = $request->query->get('q');
+        $q = strtolower($q);
+
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository('RTERContentBundle:BlogPost');
+
+        $query = $repo->createQueryBuilder('bp')
+            ->select('bp')
+            ->where("bp.name LIKE :q")
+            ->setParameter('q', $q)
+            ->getQuery();
+
+        $results = $query->getResult();
+//         var_dump(serialize($results));
+//        die;
+//        $deleteForm = $this->createDeleteForm($blogPost);
+//        $editForm = $this->createForm('RTER\ContentBundle\Form\BlogPostType', $blogPost);
+//        $editForm->handleRequest($request);
+//
+//        if ($editForm->isSubmitted() && $editForm->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($blogPost);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('blogpost_edit', array('id' => $blogPost->getId()));
+//        }
+
+        return $this->render('blogpost/searchResults.html.twig', array(
+            'results' =>  $results,
+        ));
+    }
 }

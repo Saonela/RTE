@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Results of search</h3>
+
+    {% for result in results %}
+
+        <p>{{ result.id }} {{ result.name }} {{ result.location }}
+        {% if result.date %}{{ result.date|date('Y-m-d') }}{% endif %}
+        {{ result.content }}
+        <p>
+
+
+    {% endfor %}
+
+{% endblock %}
