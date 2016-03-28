@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new RTER\UserBundle\RTERUserBundle(),
             new RTER\ContentBundle\RTERContentBundle(),
-            new ONGR\ElasticsearchBundle\ONGRElasticsearchBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

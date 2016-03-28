@@ -79,13 +79,3 @@ fos_user:
         form:
             type: RTER\UserBundle\Form\Type\RegistrationType
             validation_groups: [AppRegistration]
-
-ongr_elasticsearch:
-    connections:
-        default:
-            index_name: acme
-    managers:
-        default:
-            connection: default
-#            mappings:
-#                - RTER\ContentBundle

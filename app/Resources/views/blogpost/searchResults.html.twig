@@ -5,10 +5,15 @@
 
     {% for result in results %}
 
-        <p>{{ result.id }} {{ result.name }} {{ result.location }}
-        {% if result.date %}{{ result.date|date('Y-m-d') }}{% endif %}
-        {{ result.content }}
-        <p>
+        <a href="{{ path('blog_show', { 'continent': result.country.continent.name, 'country':result.country.name, 'id': result.id }) }}">
+            {{ result.name }} {{ result.location }}
+        </a>
+        <br>
+        {#<p>{{ result.id }} {{ result.name }}#}
+            {#{{ result.location }}#}
+        {#{% if result.date %}{{ result.date|date('Y-m-d') }}{% endif %}#}
+        {#{{ result.content }}#}
+        {#<p>#}
 
 
     {% endfor %}
