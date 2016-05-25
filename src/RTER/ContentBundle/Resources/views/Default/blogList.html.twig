@@ -1,13 +1,23 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {% if blogList  %}
-        {% for blogPost in blogList %}
-            <div class="col-lg-6">
-                <div class="info-content text-center blogPost">
-                    <input type="hidden" class="info" value="{{ blogPost.id }}">
-                    <h3>{{ blogPost.name }}</h3>
-                </div>
+        <div class="side-div-side col-lg-6">
+            <h1 class="list-header">{{ blogList[0].country.continent.name }} / {{ blogList[0].country.name }}</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row row-content">
+                {% for row in blogList|batch(2) %}
+                    <div class="col-lg-6">
+                        <div class="list-group">
+                            {% for blogPost in row %}
+                                <a href="{{ path('blog_show', {'continent': blogPost.country.continent.name, 'country': blogPost.country.name, 'id' : blogPost.id }) }}" class="list-group-item">
+                                    <h3 class="list-group-item-heading">{{ blogPost.name }}</h3>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     {% endif %}
 {% endblock %}

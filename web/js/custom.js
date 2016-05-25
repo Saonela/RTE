@@ -1,6 +1,8 @@
 $(document).ready(function() {
     init();
+
 });
+
 
 function init(){
 
@@ -17,8 +19,8 @@ function init(){
     });
 
     $(".country").click(function(){
-        var country = $(this).attr('id');
-        document.location.href += '/' + country;
+        //var country = $(this).attr('id');
+        //document.location.href += '/' + country;
 
         //    $.ajax({
         //        type: $(this).attr('method'),

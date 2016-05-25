@@ -1,8 +1,75 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>{{ blogPost.name }}</h1>
-    <h3>{{ blogPost.user.username }}</h3>
-    <h2>{{ blogPost.date|date("Y-m-d") }}</h2>
-    <h2>{{ blogPost.location}}</h2>
-    <p>{{ blogPost.content }}</p>
+    <div class="side-div-side col-lg-6">
+        <h1 class="list-header">{{ blogPost.country.continent.name }} / {{ blogPost.country.name }}</h1>
+    </div>
+    <div class="container-fluid blog">
+        <div class="blog-body">
+            <div class="blog-side">
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail blog-image">
+                            <img src="{{ asset('apple-touch-icon.png')}}" alt="...">
+                        </a>
+                        <a href="#" class="thumbnail blog-image">
+                            <img src="{{ asset('apple-touch-icon.png')}}" alt="...">
+                        </a>
+                        <a href="#" class="thumbnail blog-image">
+                            <img src="{{ asset('apple-touch-icon.png')}}" alt="...">
+                        </a>
+                        <a href="#" class="thumbnail blog-image">
+                            <img src="{{ asset('apple-touch-icon.png')}}" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-header">
+                <h1>{{ blogPost.name }}</h1>
+                <h2>{{ blogPost.date|date("Y-m-d") }} {{ blogPost.location }}</h2>
+                <h3>{{ blogPost.user.username }}</h3>
+                <br>
+            </div>
+            {{ blogPost.content }}
+            {#Lorem ipsum dolor sit amet, vel mutat adipisci adipiscing ne, mea cibo prima aperiri te, eos tota adolescens an. Mea exerci aliquam neglegentur ad, an eum sumo blandit. Unum probo mediocrem sit ea, quo et habeo periculis ullamcorper. Usu labore omnesque noluisse ex, cum ad eros deleniti.#}
+
+            {#Sit ne quod vulputate liberavisse, vis labores sensibus dissentiunt id. Nec voluptatum philosophia ad, in legere integre mel. An mediocrem voluptatibus sea. Ea dolor clita tollit nec, falli definitionem vix ad.#}
+
+            {#Eos id cibo graece. Oratio graece virtute qui ex. Mel utinam percipitur no. Ei his amet urbanitas, ad augue soluta constituam cum, cum ex nonumes torquatos.#}
+
+            {#Nam an aliquip contentiones, eos mucius saperet eu. Stet pertinacia mea ei, ne ludus virtute has. Ei duis veniam meliore vis. His te alienum salutandi contentiones, ius in ubique cetero malorum. Nam ignota maiorum percipit ei. Ut eos diam prompta sententiae.#}
+
+            {#Ut assum movet usu, his exerci iuvaret invidunt ex, choro sensibus principes nam ut. Sed omnis ornatus commune ea, usu justo doming tractatos id. Eu mea inani eruditi, his tollit epicurei cu. Te semper definitiones pro, pro ea nisl stet definitiones, an sonet utroque omnesque est.Lorem ipsum dolor sit amet, vel mutat adipisci adipiscing ne, mea cibo prima aperiri te, eos tota adolescens an. Mea exerci aliquam neglegentur ad, an eum sumo blandit. Unum probo mediocrem sit ea, quo et habeo periculis ullamcorper. Usu labore omnesque noluisse ex, cum ad eros deleniti.#}
+
+            {#Sit ne quod vulputate liberavisse, vis labores sensibus dissentiunt id. Nec voluptatum philosophia ad, in legere integre mel. An mediocrem voluptatibus sea. Ea dolor clita tollit nec, falli definitionem vix ad.#}
+
+            {#Eos id cibo graece. Oratio graece virtute qui ex. Mel utinam percipitur no. Ei his amet urbanitas, ad augue soluta constituam cum, cum ex nonumes torquatos.#}
+
+            {#Nam an aliquip contentiones, eos mucius saperet eu. Stet pertinacia mea ei, ne ludus virtute has. Ei duis veniam meliore vis. His te alienum salutandi contentiones, ius in ubique cetero malorum. Nam ignota maiorum percipit ei. Ut eos diam prompta sententiae.#}
+
+            {#Ut assum movet usu, his exerci iuvaret invidunt ex, choro sensibus principes nam ut. Sed omnis ornatus commune ea, usu justo doming tractatos id. Eu mea inani eruditi, his tollit epicurei cu. Te semper definitiones pro, pro ea nisl stet definitiones, an sonet utroque omnesque est.Lorem ipsum dolor sit amet, vel mutat adipisci adipiscing ne, mea cibo prima aperiri te, eos tota adolescens an. Mea exerci aliquam neglegentur ad, an eum sumo blandit. Unum probo mediocrem sit ea, quo et habeo periculis ullamcorper. Usu labore omnesque noluisse ex, cum ad eros deleniti.#}
+
+            {#Sit ne quod vulputate liberavisse, vis labores sensibus dissentiunt id. Nec voluptatum philosophia ad, in legere integre mel. An mediocrem voluptatibus sea. Ea dolor clita tollit nec, falli definitionem vix ad.#}
+
+            {#Eos id cibo graece. Oratio graece virtute qui ex. Mel utinam percipitur no. Ei his amet urbanitas, ad augue soluta constituam cum, cum ex nonumes torquatos.#}
+
+            {#Nam an aliquip contentiones, eos mucius saperet eu. Stet pertinacia mea ei, ne ludus virtute has. Ei duis veniam meliore vis. His te alienum salutandi contentiones, ius in ubique cetero malorum. Nam ignota maiorum percipit ei. Ut eos diam prompta sententiae.#}
+
+            {#Ut assum movet usu, his exerci iuvaret invidunt ex, choro sensibus principes nam ut. Sed omnis ornatus commune ea, usu justo doming tractatos id. Eu mea inani eruditi, his tollit epicurei cu. Te semper definitiones pro, pro ea nisl stet definitiones, an sonet utroque omnesque est.Lorem ipsum dolor sit amet, vel mutat adipisci adipiscing ne, mea cibo prima aperiri te, eos tota adolescens an. Mea exerci aliquam neglegentur ad, an eum sumo blandit. Unum probo mediocrem sit ea, quo et habeo periculis ullamcorper. Usu labore omnesque noluisse ex, cum ad eros deleniti.#}
+
+            {#Sit ne quod vulputate liberavisse, vis labores sensibus dissentiunt id. Nec voluptatum philosophia ad, in legere integre mel. An mediocrem voluptatibus sea. Ea dolor clita tollit nec, falli definitionem vix ad.#}
+
+            {#Eos id cibo graece. Oratio graece virtute qui ex. Mel utinam percipitur no. Ei his amet urbanitas, ad augue soluta constituam cum, cum ex nonumes torquatos.#}
+
+            {#Nam an aliquip contentiones, eos mucius saperet eu. Stet pertinacia mea ei, ne ludus virtute has. Ei duis veniam meliore vis. His te alienum salutandi contentiones, ius in ubique cetero malorum. Nam ignota maiorum percipit ei. Ut eos diam prompta sententiae.#}
+
+            {#Ut assum movet usu, his exerci iuvaret invidunt ex, choro sensibus principes nam ut. Sed omnis ornatus commune ea, usu justo doming tractatos id. Eu mea inani eruditi, his tollit epicurei cu. Te semper definitiones pro, pro ea nisl stet definitiones, an sonet utroque omnesque est.#}
+        </div>
+
+
+        {#<h1>{{ blogPost.name }}</h1>#}
+        {#<h3>{{ blogPost.user.username }}</h3>#}
+        {#<h2>{{ blogPost.date|date("Y-m-d") }}</h2>#}
+        {#<h2>{{ blogPost.location}}</h2>#}
+        {#<p>{{ blogPost.content }}</p>#}
+    </div>
 {% endblock %}

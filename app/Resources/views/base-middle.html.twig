@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {#<div class="jumbotron">#}
+        {#<h1>Start Your Adventure Right Here!</h1>#}
+        {#&#123;&#35;<div class="main-info">&#35;&#125;#}
+            {#<p><b>Take</b> your unique chance to get to know any place in the world and see what other people have to say about that.</p>#}
+            {#<p><b>Or</b> leave your own mark and share your feelings and impressions.</p>#}
+            {#<p>Flexible database allows to cut all limits and leave feedback about every corner on earth that got your attention.</p>#}
+        {#&#123;&#35;</div>&#35;&#125;#}
+        {#<br>#}
+        {#<p class="lead">Search for countries*, regions, places and towns that interests you and see what they offer straight from other travellers unedited experiences.</p>#}
+    {#<div class="main-info" style="text-align: left">#}
+        {#<small style="text-align: left">*not implemented yet</small>#}
+    {#</div>#}
+        {#<form action="{{ path('blogpost_search')}}" method="get">#}
+        {#<fieldset class="form-group">#}
+            {#<label for="content"></label>#}
+            {#<input name="q" type="text">#}
+            {#<button type="submit" class="btn btn-success">Post</button>#}
+        {#</fieldset>#}
+
+        {#&#123;&#35;<p><a class="btn btn-lg btn-success" href="#" role="button">Search</a></p>&#35;&#125;#}
+        {#</form>#}
+    {#</div>#}
+
+    {% block content %}
+    {% endblock %}
+
+{% endblock %}

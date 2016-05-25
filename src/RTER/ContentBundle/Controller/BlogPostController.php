@@ -2,10 +2,6 @@
 
 namespace RTER\ContentBundle\Controller;
 
-use ONGR\ElasticsearchBundle\Result\Result;
-use ONGR\ElasticsearchDSL\Query\MatchAllQuery;
-use ONGR\ElasticsearchDSL\Query\RangeQuery;
-use ONGR\ElasticsearchDSL\Query\TermQuery;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;

@@ -5,9 +5,12 @@
 
 {% block fos_user_content %}
 
-<div class="registration-form-title">
-    <h2>Login</h2>
+<div class="side-div-side col-lg-6">
+    <h1 class="list-header">Login</h1>
 </div>
+<div class="container-fluid">
+    {#<br><br><br> <br><br><br>#}
+    <div class="wrap_user_content">
     {#{% if form_errors(form.email) or form_errors(form.password) %}#}
         {#<div class="alert alert-danger" role="alert">#}
             {#{{ form_errors(form.email) }}#}
@@ -37,4 +40,10 @@
         </div>
     </div>
 </form>
+
+<div class="login_info">
+    <p>Not a member? <a href="{{ path('fos_user_registration_register') }}">Register</a> right now to write your own adventure!</p>
+</div>
+        </div>
+    </div>
 {% endblock fos_user_content %}

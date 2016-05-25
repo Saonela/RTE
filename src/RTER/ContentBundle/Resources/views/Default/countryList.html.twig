@@ -1,10 +1,23 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 {% if countries  %}
-    {% for country in countries %}
-        <div class="col-lg-6">
-            <div class="info-content text-center country" id="{{ country.name }}"><h3>{{ country.name }}</h3></div>
+    <div class="side-div-side col-lg-6">
+        <h1 class="list-header">{{ countries[0].continent.name }}</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row row-content">
+            {% for row in countries|batch(2) %}
+            <div class="col-lg-6">
+                <div class="list-group">
+                    {% for country in row %}
+                    <a href="{{ path('blog_list_show', {'continent': country.continent.name, 'country': country.name}) }}" class="list-group-item">
+                        <h3 class="list-group-item-heading">{{ country.name }}</h3>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 {% endif %}
 {% endblock %}
