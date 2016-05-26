@@ -175,7 +175,9 @@ class BlogPostController extends Controller
 
         $query = $repo->createQueryBuilder('bp')
             ->select('bp')
+            ->leftJoin('bp.country', 'co', 'WITH', 'co = bp.country')
             ->where("bp.location LIKE :q")
+            ->orWhere("co.name LIKE :q")
             ->setParameter('q', '%'.$q.'%')
             ->getQuery();
 

@@ -1,14 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h3>Results of search</h3>
+    <div class="side-div-side col-lg-6">
+        <h1 class="list-header">Results of search</h1>
+    </div>
 
-    {% for result in results %}
+    <div class="container-fluid">
+        <div class="row row-content">
+            {% for row in results|batch(2) %}
+                <div class="col-lg-6">
+                    <div class="list-group">
+                        {% for result in row %}
+                            <a href="{{ path('blog_show', { 'continent': result.country.continent.name, 'country':result.country.name, 'id': result.id }) }}" class="list-group-item">
+                                <h3 class="list-group-item-heading">{{ result.name }}</h3>
+                                <h4 class="list-group-item-heading">{{ result.country.name }}</h4>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {#{% for result in results %}#}
 
-        <a href="{{ path('blog_show', { 'continent': result.country.continent.name, 'country':result.country.name, 'id': result.id }) }}">
-            {{ result.name }} {{ result.location }}
-        </a>
-        <br>
+        {#<a href="">#}
+            {#{{ result.name }} {{ result.location }}#}
+        {#</a>#}
+        {#<br>#}
         {#<p>{{ result.id }} {{ result.name }}#}
             {#{{ result.location }}#}
         {#{% if result.date %}{{ result.date|date('Y-m-d') }}{% endif %}#}
@@ -16,6 +34,7 @@
         {#<p>#}
 
 
-    {% endfor %}
+
+    {#{% endfor %}#}
 
 {% endblock %}
